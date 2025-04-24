@@ -1,0 +1,8 @@
+﻿@model Aaditya.Models.User
+
+<h2 class="text-center">Edit User Profile</h2>
+<form asp-action="Edit" method="post" class="w-50 mx-auto">
+    <input type="hidden" asp-for="uID" />
+    @Html.Partial("_UserFormPartial", Model)
+    <button type="submit" class="btn btn-success">Update</button>
+</form>

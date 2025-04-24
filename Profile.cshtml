@@ -1,0 +1,109 @@
+﻿@model Aaditya.Models.User
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="icon" href="/chocolux-master/assets/images/LOGO.jpg">
+<script language="javascript" type="text/javascript">
+    window.history.forward();
+</script>
+
+<style>
+    body {
+        background-color: #fff9f0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .success-container {
+        max-width: 600px;
+        margin: 30px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(131, 57, 7, 0.15);
+        border: 2px solid #833907;
+    }
+
+    .success-title {
+        color: #833907;
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        text-align: center;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #e0a800;
+    }
+
+    .profile-title {
+        color: #833907;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #e0a800;
+    }
+
+    dl.row dt {
+        color: #833907;
+        font-weight: 600;
+    }
+
+    dl.row dd {
+        margin-bottom: 15px;
+    }
+
+    .btn-shopping {
+        background-color: #833907;
+        color: white;
+        border: 2px solid #833907;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+        .btn-shopping:hover {
+            background-color: #6a2e06;
+            border-color: #6a2e06;
+            color: white;
+        }
+
+    header, footer {
+        display: none;
+    }
+</style>
+
+<div class="success-container">
+    <h2 class="success-title">Your Profile is Here !!</h2>
+
+    <div class="profile-details">
+        <h4 class="profile-title">Profile Details</h4>
+        <dl class="row">
+            <dt class="col-sm-4">Name</dt>
+            <dd class="col-sm-8">@Model.uName</dd>
+
+            <dt class="col-sm-4">Email</dt>
+            <dd class="col-sm-8">@Model.uEmail</dd>
+
+            <dt class="col-sm-4">Contact</dt>
+            <dd class="col-sm-8">@Model.uContact</dd>
+
+            <dt class="col-sm-4">Address</dt>
+            <dd class="col-sm-8">@Model.uAddress</dd>
+
+            <dt class="col-sm-4">Pincode</dt>
+            <dd class="col-sm-8">@Model.uPincode</dd>
+        </dl>
+
+        <div class="text-center">
+            <a href="~/chocolux-master/CUSTOMER_PANEL.html" class="btn-shopping">Continue to Shopping !!</a>
+            <a href="@Url.Action("Register", "Account")" class="btn-shopping">Logout</a>
+        </div>
+
+    </div>
+</div>

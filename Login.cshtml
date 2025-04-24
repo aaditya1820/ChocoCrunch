@@ -1,0 +1,159 @@
+﻿@model Aaditya.Models.Login
+
+@{
+    ViewData["Title"] = "Login";
+}
+<link rel="icon" href="/chocolux-master/assets/images/LOGO.jpg">
+<script language="javascript" type="text/javascript">
+    window.history.forward();
+</script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        background-position: center;
+        background-size: cover;
+background-image: url('/images/chocolate.jpg');
+
+
+
+    /* Rest of the CSS remains the same */
+    .login-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 35px;
+        width: 100%;
+        max-width: 420px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        margin: auto;
+        margin-top: 78px;
+        text-align: center;
+    }
+
+
+        .login-container h2 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #fff;
+            /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); */
+            margin-bottom: 20px;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        display: block;
+        color: #fff;
+        margin-bottom: 5px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            border-color: #D2691E;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(to right, #D2691E, #8B4513);
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.8s ease;
+    }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #8B4513, #D2691E);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+    .text-danger {
+        color: #ff6b6b;
+        font-size: 14px;
+    }
+
+    a {
+        color: #D2691E;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    header, footer {
+        display: none;
+    }
+</style>
+
+<div class="login-container">
+    <h2>LOGIN</h2>
+
+    <form asp-action="Login">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <div class="mt-3">
+        <a asp-action="ForgotPassword">Forgot Password?</a>
+    </div>
+
+    <div class="mt-2 mx-3 text-white">
+        Don't have an account? <a asp-action="Register">Register here</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

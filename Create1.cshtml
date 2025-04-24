@@ -1,0 +1,165 @@
+﻿@model Aaditya.Models.Choco
+@{
+    ViewData["Title"] = "Add Chocolate";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<style>
+    body {
+        background-color: #fffaf3;
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 520px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(131, 57, 7, 0.12);
+        border: 1px solid #fa9f1c;
+    }
+
+    .form-heading {
+        background: linear-gradient(to right, #fa9f1c, #fcb045);
+        color: #833907;
+        padding: 10px 14px;
+        text-align: center;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: 0.3px;
+    }
+
+     header, footer {
+        display: none;
+    }
+
+    input.form-control,
+    textarea.form-control {
+        border: 1px solid #fa9f1c;
+        border-radius: 6px;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        height: 34px;
+    }
+
+    textarea.form-control {
+        height: 60px;
+    }
+
+   .btn-success {
+        background-color: #fa9f1c !important;
+        border: none;
+        font-weight: 600;
+        color: #000;
+        border-radius: 6px;
+        padding: 6px 16px;
+        font-size: 0.85rem;
+    }
+
+    .btn-success:hover {
+        background-color: #e88d0e !important;
+        color: #000;
+    }
+
+    .btn-danger {
+        background-color: #e74c3c !important;
+        border: none;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 6px 16px;
+        font-size: 0.85rem;
+    }
+
+    .btn-danger:hover {
+        background-color: #c0392b !important;
+    }
+
+    .btn-warning {
+        background-color: #ffc107 !important;
+        color: #000;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        padding: 6px 16px;
+        font-size: 0.85rem;
+    }
+
+    .btn-warning:hover {
+        background-color: #e0a800 !important;
+    }
+
+    .btn-secondary {
+        background-color: #833907;
+        border: none;
+        font-weight: 600;
+        color: white;
+        padding: 6px 14px;
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+
+    .btn-secondary:hover {
+        background-color: #6e2e07;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+
+    .mb-2 {
+        margin-bottom: 10px !important;
+    }
+</style>
+
+
+<div class="container">
+    <div class="form-heading">Add New Chocolate</div>
+
+    <form asp-action="Create1" method="post">
+        <div class="mb-2">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="Brand"></label>
+            <input asp-for="Brand" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="Flavour"></label>
+            <input asp-for="Flavour" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+        <div class="mb-2">
+            <label asp-for="SellerPrice"></label>
+            <input asp-for="SellerPrice" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="SellingPrice"></label>
+            <input asp-for="SellingPrice" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <label asp-for="Margin"></label>
+            <input asp-for="Margin" class="form-control" />
+        </div>
+
+        <div class="action-buttons">
+            <button type="submit" class="btn btn-success">Add</button>
+            <a asp-action="Index1" class="btn btn-secondary">Back</a>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

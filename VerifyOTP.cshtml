@@ -1,0 +1,68 @@
+﻿@model OTPModel
+
+@{
+    ViewData["Title"] = "Verify OTP";
+}
+<link rel="icon" href="/chocolux-master/assets/images/LOGO.jpg">
+<script language="javascript" type="text/javascript">
+    window.history.forward();
+</script>
+<style>
+    header, footer {
+        display: none;
+    }
+
+    body {
+        background-image: url('/images/chocolate.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .choco-text {
+        color: #6F4E37;
+    }
+
+    .btn-choco {
+        background-color: #6F4E37;
+        border: none;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-choco:hover {
+            background-color: #5a3e2b;
+            color: #fff;
+        }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+    }
+</style>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="width: 400px;">
+        <h2 class="text-center choco-text">Verify OTP</h2>
+        <p class="text-center text-muted">Enter the OTP sent to your email.</p>
+
+        <form asp-action="VerifyOTP" method="post">
+            <input type="hidden" name="Email" value="@TempData["Email"]" />
+
+            <div class="form-group mb-3">
+                <label for="OTP" class="form-label choco-text">Enter OTP</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                    <input type="text" class="form-control" name="OTP" id="OTP" required placeholder="Enter OTP">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-choco w-100 mt-3">Verify</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">

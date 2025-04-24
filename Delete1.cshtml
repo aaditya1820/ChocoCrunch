@@ -1,0 +1,168 @@
+﻿@model Aaditya.Models.Choco
+
+@{
+    ViewData["Title"] = "Delete Chocolate";
+}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<style>
+    body {
+        background-color: #fffaf3;
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header, footer {
+        display: none;
+    }
+
+    .container, .container-fluid {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(131, 57, 7, 0.12);
+        border: 1px solid #fa9f1c;
+    }
+
+    h1, h2, h3, h4 {
+        color: #833907;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-label, label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    input.form-control,
+    select.form-control,
+    textarea.form-control {
+        border: 1px solid #fa9f1c;
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        height: 38px;
+    }
+
+    textarea.form-control {
+        height: 70px;
+    }
+
+    .btn-primary {
+        background-color: #fa9f1c;
+        border: none;
+        font-weight: 600;
+        padding: 6px 16px;
+        font-size: 0.9rem;
+        color: #000;
+        border-radius: 6px;
+    }
+
+        .btn-primary:hover {
+            background-color: #e88d0e;
+        }
+
+    .btn-secondary {
+        background-color: #833907;
+        border: none;
+        font-weight: 600;
+        padding: 6px 14px;
+        font-size: 0.9rem;
+        color: #fff;
+        border-radius: 6px;
+    }
+
+        .btn-secondary:hover {
+            background-color: #6e2e07;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+        font-weight: 600;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border: none;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .btn {
+        margin: 3px;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+        font-size: 0.95rem;
+    }
+
+    header, footer {
+        display: none;
+    }
+
+    .table thead {
+        background: linear-gradient(to right, #fa9f1c, #fcb045);
+        color: #000;
+    }
+
+    .text-danger {
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .text-end {
+        margin-top: 15px;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 0 2px rgba(250, 159, 28, 0.4);
+        border-color: #fa9f1c;
+    }
+
+    .mb-2 {
+        margin-bottom: 12px !important;
+    }
+</style>
+
+
+<div class="container mt-4">
+    <h1 class="text-center text-danger">Delete Chocolate</h1>
+
+    <h5 class="text-center">Are you sure you want to delete this chocolate?</h5>
+
+    <div class="border rounded p-4 mt-3 bg-light">
+        <p><strong>Name:</strong> @Model?.Name</p>
+        <p><strong>Brand:</strong> @Model?.Brand</p>
+        <p><strong>Flavour:</strong> @Model?.Flavour</p>
+        <p><strong>Description:</strong> @Model?.Description</p>
+    </div>
+
+    <form asp-action="DeleteConfirmed1"asp-controller="Account" method="post">
+        <input type="hidden" name="id" value="@Model?.ChocolateID" />
+        <div class="mt-3 text-center">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index1" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
