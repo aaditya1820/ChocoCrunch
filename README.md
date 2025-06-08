@@ -1,5 +1,5 @@
 # ChocoCrunch
-Chocolate Selling Website
+Chocolate Selling Website [ .Net Core ]
 
 ChocoCrunch is an eCommerce website that allows customers to browse, select,
 and purchase a variety of chocolates online. It features a well-organized product
